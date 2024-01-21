@@ -1,0 +1,7 @@
+{
+  "name": "ipm-web-site",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
