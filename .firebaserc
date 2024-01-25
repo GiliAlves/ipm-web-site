@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ipm-web-site": {
+      "hosting": {
+        "app": [
+          "ipm-web-site"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ipm-web-site"
+  }
+}
