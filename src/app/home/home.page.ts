@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public isFooter: boolean = false;
+
   constructor() {}
 
+  handleScroll(ev: CustomEvent<ScrollDetail>) {
+    this.isFooter = ev.detail.scrollTop >= 372 ? true : false
+  }
 }

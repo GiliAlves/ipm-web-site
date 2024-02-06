@@ -15,12 +15,47 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" [scrollEvents]="true" 
+  (ionScroll)="handleScroll($any($event))">
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col><ion-img src="../../assets/fundo.jpg"></ion-img></ion-col>
     </ion-row>
-    <ion-row><ion-col>teste</ion-col></ion-row>
-    <ion-row><ion-col>teste</ion-col></ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-no-padding" [fixed]="true">    
+    <ion-row>
+      <ion-col>
+        <h2>Historia</h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h2>Sociedades</h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h2>Sobre</h2>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
+
+<!-- <ion-footer class="ion-no-border" collapse="true">
+  <ion-toolbar>
+
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons class="ion-justify-content-center">
+      <ion-tab-button><ion-icon name="logo-facebook"></ion-icon> Facebook</ion-tab-button>
+      <ion-tab-button><ion-icon name="logo-instagram"></ion-icon> Instagram</ion-tab-button>
+      <ion-tab-button><ion-icon name="logo-youtube"></ion-icon> YouTube</ion-tab-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="ion-text-center">
+    <ion-note>Igreja Presbiteriana de Mauá</ion-note>
+  </ion-toolbar>
+</ion-footer> -->
