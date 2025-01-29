@@ -32,10 +32,13 @@ registerLocaleData(localePt, 'pt-BR');
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
-    }),
+    })
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    provideClientHydration(),
     provideFirebaseApp(() =>
       initializeApp({
         projectId: 'ipm-web-site',
@@ -50,11 +53,6 @@ registerLocaleData(localePt, 'pt-BR');
     provideAnalytics(() => getAnalytics()),
     provideFirestore(() => getFirestore()),
     providePerformance(() => getPerformance()),
-  ],
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: LOCALE_ID, useValue: 'pt-BR' },
-    provideClientHydration(),
     ScreenTrackingService,
   ],
   bootstrap: [AppComponent],
